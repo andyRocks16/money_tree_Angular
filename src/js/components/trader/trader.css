@@ -1,0 +1,63 @@
+.heading_div h3 {
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+thead {
+    background-color: #407ada;
+    color: #ddd;
+}
+.panel-heading {
+    background-color: #628dd4;
+}
+.nav{
+    background-color: #407ada;
+    margin-top: 10px;
+}
+.nav-pills>li>a{
+    color: white;
+}
+
+#search_bar {
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+#search_bar #s1 {
+    display: inline;
+
+    margin-right: 15px;
+}
+
+#search_bar #s1 input {
+    width: 100%;
+    display: inline;
+    margin-top: 10px;
+
+
+}
+
+
+#search_bar #s2 {
+    display: inline;
+    margin-right: 15px;
+}
+
+#search_bar #s2 select {
+    width: 100%;
+}
+
+#search_bar #s3 {
+    display: inline;
+    margin-right: 15px;
+}
+
+#search_bar #s3 input {
+    width: 100%;
+}
+
+
+#table_div table {
+   padding-top: 20px;
+    
+}
+

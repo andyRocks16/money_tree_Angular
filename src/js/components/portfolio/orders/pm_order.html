@@ -1,0 +1,154 @@
+<!--Header code begin-->
+<header-money></header-money>
+<!--Header code end-->
+
+<!--Main page content begin-->
+<section class="container well">
+
+    <div class="row">
+        <section class="container-fluid col-xs-12  col-sm-12  col-md-12 ">
+            <!--Begin tabs pane-->
+            <nav id="nav-pane">
+                <div class="container-fluid ">
+                    <ul class="nav nav-pills ">
+                        <li><a ui-sref="pm_login">Portfolio</a></li>
+                        <li class="selected"><a ui-sref="portfolioOrder">Order</a></li>
+                        <li><a ui-sref="drafts">Draft </a></li>
+                        <li class="pull-right"><a ui-sref="logout">Sign Out</a></li>
+
+                    </ul>
+                </div>
+                <div id="pane-style"></div>
+            </nav>
+            <!--End tabs pane-->
+            <hr>
+
+            <search></search>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-sm pull-right">
+                            <span class="glyphicon glyphicon-search"></span> Search 
+                        </button>
+            </div>
+
+            <!--Begin accrodion - Order History-->
+            <div>
+                <br> <br>
+                <hr>
+            </div>
+            <!--SHARED DYNAMIC RETURNED DATA PASTE IT into a table template below -->
+            <div class="table_div col-xs-12 table-responsive ">
+                <table class="table table-striped table-bordered ">
+
+                </table>
+            </div>
+            <div>
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" style="cursor:pointer">
+                                    <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">Order History</a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse ">
+                                <div class="panel-body" ng-repeat="trader in $ctrl.traderList">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accord" data-target="#collapse{{trader.id}}" ng-bind="$ctrl.fullName(trader)" ng-click="$ctrl.traderDetails(trader.id)"></a>
+                                    </h4>
+                                    <div class="table-responsive" id="collapse{{trader.id}}">
+                                        <table class="table table-hover table-bordered" ng-if="$ctrl.accordian[trader.id] === true">
+                                            <thead>
+                                                <th>PM ID</th>
+                                                <th>Order ID</th>
+                                                <th>Stock Name</th>
+                                                <th>Symbol</th>
+                                                <th>Side</th>
+                                                <th>Quantity</th>
+                                                <th>Investment</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+
+                                                </tr>
+                                            </thead>
+                                            <!--RENDER DATA FROM DB HERE INSIDE TBODY -->
+                                            <tbody>
+
+                                                <tr ng-repeat="loan in $ctrl.dataList[trader.id]">
+                                                    <td>{{loan.pm_id}}</td>
+                                                    <td>{{loan.id}}</td>
+                                                    <td>{{loan.share_name}}</td>
+                                                    <td>{{loan.symbol}}</td>
+                                                    <td>{{loan.side}}</td>
+                                                    <td>{{loan.quantity}}</td>
+                                                    <td>{{loan.price}}</td>
+                                                    <td>{{loan.timestamp| date }}</td>
+                                                    <td>Completed</td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title" style="cursor:pointer">
+                                    <a data-toggle="collapse" data-parent="#accordion1" data-target="#collapse12">Order Book</a>
+                                </h4>
+                            </div>
+                            <div id="collapse12" class="panel-collapse collapse out">
+                                <div class="panel-body" ng-repeat="trader in $ctrl.traderList ">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accord" data-target="#collapse1{{trader.id}}" ng-bind="$ctrl.fullName(trader)" ng-click="$ctrl.orderHistory(trader.id)"></a>
+                                    </h4>
+                                    <div class="table-responsive" id="collapse1{{trader.id}}">
+                                        <table class="table table-hover table-bordered" ng-if="$ctrl.accordian1[trader.id] === true">
+                                            <thead>
+                                                <th>PM ID</th>
+                                                <th>Order ID</th>
+                                                <th>Share ID</th>
+                                                <th>Symbol</th>
+                                                <th>Side</th>
+                                                <th>Quantity</th>
+                                                <th>Investment</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <!--RENDER DATA FROM DB HERE INSIDE TBODY -->
+                                            <tbody>
+
+                                                <tr ng-repeat="loan in $ctrl.dataList1[trader.id]">
+                                                    <td>{{loan.pm_id}}</td>
+                                                    <td>{{loan.id}}</td>
+                                                    <td>{{loan.share_id}}</td>
+                                                    <td>NSE</td>
+                                                    <!--{{loan.symbol}}-->
+                                                    <td>{{loan.side}}</td>
+                                                    <td>{{loan.total_quantity}}</td>
+                                                    <td>{{loan.current_price}}</td>
+                                                    <td>{{loan.timestamp| date }}</td>
+                                                    <td>{{loan.status}}</td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Main page content end-->
+
+        <!--Footer code begin-->
+        <footer-money></footer-money>
+        <!--Footer code end-->

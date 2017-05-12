@@ -1,0 +1,62 @@
+#nav-pane .container-fluid{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.nav {
+    background-color: #407ada;
+    margin-top: 10px;
+    display:block;
+}
+
+thead {
+    background-color: #a9fff7;
+}
+
+.panel-heading {
+    background-color: #628dd4;
+}
+
+.nav-pills>li>a {
+    color: white;
+    display:block;
+}
+
+.nav>li>a:focus, .nav>li>a:hover, .nav>li>a:active {
+    text-decoration: none;
+    background-color:#153F84;
+    display:block;
+}
+
+.selected {
+    color: white;
+    background-color:#153F84;
+}
+
+form {
+    border: 3px solid cyan;
+    padding: 5px;
+}
+
+label{
+    padding-top: 10px;
+}
+
+.well{
+    margin-top: 65px;
+}
+
+.table td, th {
+   text-align: center;   
+}
+
+#pane-style {
+    height: 3px;
+    background-color: #153F84;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}

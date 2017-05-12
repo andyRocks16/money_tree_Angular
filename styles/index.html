@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!--<script src="index.js"></script>-->
+<body>
+  
+   <div class="wrapper">
+    <form class="form-signin" ng-submit="$ctrl.login()">       
+      <h2 class="form-signin-heading text-success">Money Tree login</h2>
+      <select class="form-control" ng-model="$ctrl.access">
+        <option value="PM">PORTFOLIO MANAGER(PM)</option>
+    <option value="ET">EQUITY TRADER(ET)</option>
+    <!--<option value="PM">PM and ET</option>-->
+    <option value="broker">BROKER</option>
+      </select>
+      <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" ng-model="$ctrl.username"/>
+      <input type="password" class="form-control" name="password" placeholder="Password" required="" ng-model="$ctrl.password"/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
+</body>
+</html>

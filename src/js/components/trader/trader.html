@@ -1,0 +1,126 @@
+
+<!--PLEASE INCLUDE SHARED HEADER TEMPLATE HERE -->
+<section>
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <nav>
+                <div class="container-fluid">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a ui-sref="et_login">Portfolio</a></li>
+                        <li><a ui-sref="traderOrder">Order List</a></li>
+        
+                        <li class="pull-right"> <a href="#"><span class="glyphicon glyphicon-user"></span> Hi {{$ctrl.user}}</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <hr>
+        </div>
+        <div class="col-xs-12 col-md-12 heading_div">
+            <h3>SEARCH ORDERS</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div >
+            <div class="col-md-12" id="search_bar">
+                <div class="col-xs-12 col-sm-5 col-md-5 " id="s1">
+                    <div class="input-group stylish-input-group">
+                        <input type="text" class="form-control" placeholder="Search" id="search-shares">
+                        <span class="input-group-addon">
+                            <button type="submit">
+                                 <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 " id="s2">
+                    <label>SEARCH BY</label>
+                    <select value="select">
+                        <option value="stock_name">Stock Name</option>
+                        <option value="pm_name">Portfolio Manager </option>
+                    </select>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3" id="s3">
+                    <label>FILTER BY</label>
+                    <input type="date"></input>
+                </div>
+            </div>
+            <!--SHARED DYNAMIC RETURNED DATA PASTE IT into a table template below -->
+            <div class="table_div col-xs-12 table-responsive ">
+                <table class="table table-striped table-bordered ">
+                  
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1">ORDER HISTORY</a>
+    </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>PM NAME</th>
+                                            <th>ORDER ID</th>
+                                            <th>STOCK NAME</th>
+                                            <th>SYMBOL</th>
+                                            <th>SIDE</th>
+                                            <th>QUANTITY</th>
+                                            <th>PRICE</th>
+                                            <th>STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <!--RENDER DATA FROM DB HERE INSIDE TBODY -->
+                                    <tbody> </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2">ORDER BOOK</a>
+    </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>PM NAME</th>
+                                            <th>ORDER ID</th>
+                                            <th>STOCK NAME</th>
+                                            <th>SYMBOL</th>
+                                            <th>SIDE</th>
+                                            <th>QUANTITY</th>
+                                            <th>PRICE</th>
+                                            <th>STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <!--RENDER DATA FROM DB HERE INSIDE TBODY -->
+                                    <tbody> </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--INCLUDE SHARED FOOTER TEMPLATE -->
+</section>

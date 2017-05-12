@@ -1,0 +1,16 @@
+       
+.absolute {
+    position: absolute;
+    color: black;
+    top: 200px;
+    left: 40px;
+}
+/*
+.image {
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}*/

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            background-image: url(src/staticPages/styles/bg4.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .form-signin {
+            background: rgba(255, 234, 234, 0.6);
+        }
+        
+        input[type=text],
+        [type=password] {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<!--<script src="index.js"></script>-->
+
+<body>
+    <div class="wrapper">
+        <form class="form-signin" ng-submit="$ctrl.login()">
+            <h2 class="form-signin-heading text-success">Money Tree Login</h2> <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" ng-model="$ctrl.username" /> <input type="password" class="form-control" name="password" placeholder="Password" required=""
+                ng-model="$ctrl.password" /> <select class="form-control" ng-model="$ctrl.access">
+        <option value="" selected disabled>Login As</option>
+        <option value="PM">Portfolio Manager</option>
+    <option value="ET">Equity Trader</option>
+    <!--<option value="PM">PM and ET</option>-->
+    <option value="broker">Broker</option>
+      </select>
+            <div class="pull-right"> <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember Me
+      </label> </div> <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button> </form>
+    </div>
+</body>
+
+</html>

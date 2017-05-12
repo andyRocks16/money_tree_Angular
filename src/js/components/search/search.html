@@ -1,0 +1,47 @@
+<div class="row">
+    <!--Begin code for search pane-->
+    <section id="searchBar" class="container-fluid col-xs-12 col-sm-12 col-md-6">
+        <label for="search-shares" class="search">Search Order: </label>
+        <input type="text" class="form-control col-xs-12 col-sm-12 col-md-6" ng-model="$ctrl.data" ng-change="$ctrl.search()" placeholder="Search" id="search-shares">
+
+        <ul class="list-group " style="list-style: none;" ng-repeat="a in $ctrl.arr" ng-show="$ctrl.data">
+            <li class="list-group-item col-xs-12">
+                <div class="pull-left"><img style="width: 65px; height:35px;" src="{{a.image}}" /> <a href="">{{a.share_name}}</a> </div>
+                <div class="pull-right">
+                    <button class="btn btn-success" ng-click="$ctrl.save_sharename(a.share_name,a.ID,a.share_price,'buy')">BUY</button>
+                    <button class="btn btn-danger" ng-click="$ctrl.save_sharename(a.share_name,a.ID,a.share_price,'sell')">SELL</button>
+                </div>
+            </li>
+        </ul>
+
+    </section>
+
+    <section id="searchAdditional" class="container-fluid col-xs-6 col-sm-6 col-md-3">
+        <label for="searchBy" class="search">Search By: </label>
+        <select class="form-control" name="searchBy" id="searchBy">
+                                <option value="Buy">Name</option>
+                                <option value="Sell">Trader Manager</option>
+                            </select>
+    </section>
+
+    <section id="filterAdditional" class="container-fluid col-xs-6 col-sm-6 col-md-3">
+        <label for="searchBy" class="search">Filter By: </label>
+        <div class="form-group">
+            <div>
+                <input type='date' class="form-control" />
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!--<div ng-app="angularTypeahead">
+	<div class="container-fluid" ng-controller="TypeaheadCtrl">
+		<h2><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/angular-logo.svg" alt="Angular.js Logo"> Angular.js Typeahead</h2>
+		<div class="form-group">
+		  <label for="states">Search for US States</label>
+			<input name="states" id="states" type="text" placeholder="enter a state" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+		</div>
+    <button class="btn btn-success" type="submit">Submit</button>
+	</div>
+</div>-->
