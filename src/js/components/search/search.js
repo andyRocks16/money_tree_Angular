@@ -34,8 +34,8 @@ var app = angular.module('app')
 
 app.service('GetService', ['$http', function($http) {
     this.getData = function(a) {
-        console.log('http://10.203.60.164:8081/searchShares/' + a);
-        return $http.get('http://10.203.60.164:8081/searchShares/' + a);
+        console.log('http://localhost:8081/searchShares/' + a);
+        return $http.get('http://localhost:8081/searchShares/' + a);
     }
 }]);
 

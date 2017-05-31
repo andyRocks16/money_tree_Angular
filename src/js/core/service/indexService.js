@@ -6,10 +6,10 @@
         this.getHeros = function () {
 
             //return $http.get('mock-data/mock-heroes.json');
-            return $http.get('http://10.203.60.164:8081/getTraders')
+            return $http.get('http://localhost:8081/getTraders')
         }
         this.getpm = function () {
-            return $http.get('http://10.203.60.164:8081/getPortfolioManager')
+            return $http.get('http://localhost:8081/getPortfolioManager')
 
         }
         // this.getHeroById = function (id) {
@@ -17,44 +17,44 @@
         //     //console.log(url);
         //     return $http.get(url);
         this.save1 = function (hero, xyz) {
-            var url = 'http://10.203.60.164:8081/giveOrder/' + xyz;
+            var url = 'http://localhost:8081/giveOrder/' + xyz;
             //console.log(url);
             return $http.post(url, hero);
         };
         this.save = function (hero) {
-            var url = 'http://10.203.60.164:8081/login';
+            var url = 'http://localhost:8081/login';
             //console.log(url);
             return $http.post(url, hero);
         };
         this.save2 = function (hero, xyz) {
-            var url = 'http://10.203.60.164:8081/saveDraft/' + xyz;
+            var url = 'http://localhost:8081/saveDraft/' + xyz;
             //console.log(url);
             return $http.post(url, hero);
         };
         this.getEt = function (key, id) {
-            return $http.get('http://10.203.60.164:8081/getETPendingOrderHistory/' + key + '/' + id)
+            return $http.get('http://localhost:8081/getETPendingOrderHistory/' + key + '/' + id)
         }
         this.createBlocks = function (key, order_id) {
-            return $http.post('http://10.203.60.164:8081/buildBlocks/' + key, {
+            return $http.post('http://localhost:8081/buildBlocks/' + key, {
                 id: order_id
             })
         }
         this.getOrderList = function (xyz) {
 
-            /*$http.get('http://10.203.60.164:8081/getPendingOrders/'+sessionId).then(function(response) {
+            /*$http.get('http://localhost:8081/getPendingOrders/'+sessionId).then(function(response) {
                for(var i =0; i< response.data.message.length; i++ ){
                 $ctrl.pendingOrderList.push(response.data.message[i]);
                }
            }, function() {});*/
             console.log(xyz);
-            var url = 'http://10.203.60.164:8081/getPendingOrders/' + xyz;
+            var url = 'http://localhost:8081/getPendingOrders/' + xyz;
             console.log("URL: " + url)
             return $http.get(url);
         }
         this.getBlocks = function (key) {
-            return $http.get('http://10.203.60.164:8081/getBuildBlocks/' + key);
+            return $http.get('http://localhost:8081/getBuildBlocks/' + key);
         }
         this.getorId = function (key) {
-            return $http.get('http://10.203.60.164:8081/getOrderId/' + key);
+            return $http.get('http://localhost:8081/getOrderId/' + key);
         }
     }]);

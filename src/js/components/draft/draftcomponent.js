@@ -99,32 +99,32 @@ var app=angular.module('app')
 
 .service('GetDrafts', ['$http', function($http){
 	this.getData = function(sessionID){
-		console.log('http://10.203.60.164:8081/getDrafts/' + sessionID);
-        return $http.get('http://10.203.60.164:8081/getDrafts/' + sessionID);
+		console.log('http://localhost:8081/getDrafts/' + sessionID);
+        return $http.get('http://localhost:8081/getDrafts/' + sessionID);
 	};
 
 	this.deletDraft = function(share_id, session_id){
 		var data = {id:share_id}
-		var url = 'http://10.203.60.164:8081/delDraft/'+session_id
+		var url = 'http://localhost:8081/delDraft/'+session_id
 		return $http.post(url, data);
 	}
 }])
 
 .service('editDrafts', ['$http', function($http){
 	this.editDraft = function(sessionID, draft_id){
-		console.log('http://10.203.60.164:8081/editDraft/' + sessionID);
+		console.log('http://localhost:8081/editDraft/' + sessionID);
 		var data = {id:draft_id}
-        return $http.post('http://10.203.60.164:8081/editDraft/' + sessionID, data);
+        return $http.post('http://localhost:8081/editDraft/' + sessionID, data);
 	};
 	this.getDraft = function(sessionID, draft_id){
-		console.log('http://10.203.60.164:8081/getDraftID/' + sessionID+"/"+draft_id);
+		console.log('http://localhost:8081/getDraftID/' + sessionID+"/"+draft_id);
 		var data = {id:draft_id}
-        return $http.get('http://10.203.60.164:8081/getDraftID/'  + sessionID+"/"+draft_id);
+        return $http.get('http://localhost:8081/getDraftID/'  + sessionID+"/"+draft_id);
 	};
 }])
 .service('submitData',['$http', function($http){
 	this.saveData = function(data, sessionId){
-           var url = 'http://10.203.60.164:8081/giveOrder/' + sessionId;
+           var url = 'http://localhost:8081/giveOrder/' + sessionId;
 		   return $http.post(url, data);
 	}
 }])
@@ -135,6 +135,6 @@ var app=angular.module('app')
         this.getHeros = function () {
 
             //return $http.get('mock-data/mock-heroes.json');
-            return $http.get('http://10.203.60.164:8081/getTraders')
+            return $http.get('http://localhost:8081/getTraders')
         } 
 }])
